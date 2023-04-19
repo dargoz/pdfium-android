@@ -6,13 +6,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.dargoz.pdfium.android.databinding.ActivityMainBinding;
+import com.dargoz.pdfium.core.PdfiumCore;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'android' library on application startup.
-    static {
-        System.loadLibrary("android");
-    }
 
     private ActivityMainBinding binding;
 
@@ -25,12 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
+
+        PdfiumCore pdfiumCore = new PdfiumCore(this);
+
     }
 
-    /**
-     * A native method that is implemented by the 'android' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
+
 }

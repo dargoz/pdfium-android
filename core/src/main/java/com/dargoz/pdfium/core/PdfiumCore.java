@@ -18,7 +18,7 @@ import java.util.List;
 
 public class PdfiumCore {
     private static final String TAG = PdfiumCore.class.getName();
-    private static final Class FD_CLASS = FileDescriptor.class;
+    private static final Class<FileDescriptor> FD_CLASS = FileDescriptor.class;
     private static final String FD_FIELD_NAME = "descriptor";
 
     static {
@@ -32,6 +32,12 @@ public class PdfiumCore {
             Log.e(TAG, "Native libraries failed to load - " + e);
         }
     }
+    /**
+     * A native method that is implemented by the 'android' native library,
+     * which is packaged with this application.
+     */
+    public native String stringFromJNI();
+
 
     private native long nativeOpenDocument(int fd, String password);
 

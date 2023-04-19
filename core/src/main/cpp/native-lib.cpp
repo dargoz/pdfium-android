@@ -688,6 +688,9 @@ JNI_FUNC(jobject, PdfiumCore, nativePageCoordsToDevice)(JNI_ARGS, jlong pagePtr,
     return env->NewObject(clazz, constructorID, deviceX, deviceY);
 }
 
-}//extern C
+}
 
-extern "C"
+JNI_FUNC(jobject, PdfiumCore, stringFromJNI)(JNI_ARGS) {
+    std::string hello = "Hello from C++";
+    return env->NewStringUTF(hello.c_str());
+}//extern C
