@@ -212,7 +212,7 @@ JNI_FUNC(jlong, PdfiumCore, nativeOpenDocument)(JNI_ARGS, jint fd, jstring passw
 
         const long errorNum = FPDF_GetLastError();
         if(errorNum == FPDF_ERR_PASSWORD) {
-            jniThrowException(env, "com/shockwave/pdfium/PdfPasswordException",
+            jniThrowException(env, "com/dargoz/pdfium/core/PdfPasswordException",
                               "Password required or incorrect password.");
         } else {
             char* error = getErrorDescription(errorNum);
@@ -255,7 +255,7 @@ JNI_FUNC(jlong, PdfiumCore, nativeOpenMemDocument)(JNI_ARGS, jbyteArray data, js
 
         const long errorNum = FPDF_GetLastError();
         if(errorNum == FPDF_ERR_PASSWORD) {
-            jniThrowException(env, "com/shockwave/pdfium/PdfPasswordException",
+            jniThrowException(env, "com/dargoz/pdfium/core/PdfPasswordException",
                               "Password required or incorrect password.");
         } else {
             char* error = getErrorDescription(errorNum);
@@ -689,3 +689,5 @@ JNI_FUNC(jobject, PdfiumCore, nativePageCoordsToDevice)(JNI_ARGS, jlong pagePtr,
 }
 
 }//extern C
+
+extern "C"
