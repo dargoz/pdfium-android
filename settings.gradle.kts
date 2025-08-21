@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "pdfium-android"
-include ':app'
-include ':core'
+include(":app")
+include(":core")
