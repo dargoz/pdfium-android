@@ -48,7 +48,7 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.dargoz.pdfium'
+            groupId = 'com.github.dargoz.pdfium'
             artifactId = 'pdfium-android'
             version = '2.1.0'
 
